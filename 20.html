@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Days Until New Year</h2>
+    <p id="daysLeft"></p>
+
+    <script>
+        function calculateDaysUntilNewYear() {
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const newYear = new Date(currentYear + 1, 0, 1);
+
+            const differenceInTime = newYear - today;
+
+            const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+
+            return differenceInDays;
+        }
+
+        document.getElementById("daysLeft").textContent = `There are ${calculateDaysUntilNewYear()} days left until New Year!`;
+    </script>
+</body>
+</html>

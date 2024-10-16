@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            const year = parseInt(prompt("Enter a year:"));
+            let isLeapYear = false;
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                isLeapYear = true;
+            }
+
+            let result;
+
+            if (isLeapYear) {
+                result = `${year} is leap year`
+            } else {
+                result = `${year} is not leap year`
+            }
+            
+            document.getElementById("result").textContent = result;
+        };
+    </script>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+</html>

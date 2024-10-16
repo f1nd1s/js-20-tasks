@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Find Most Frequent Number</h2>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="findMostFrequent()">Find</button>
+    <p id="mostFrequentResult"></p>
+    
+    <script>
+        function findMostFrequent() {
+            const arr = document.getElementById('arrayInput').value.split(',').map(Number);
+            const frequency = {};
+            let maxFreq = 0;
+            let mostFrequentNum = null;
+
+            for (let num of arr) {
+                frequency[num] = (frequency[num] || 0) + 1;
+                if (frequency[num] > maxFreq) {
+                    maxFreq = frequency[num];
+                    mostFrequentNum = num;
+                }
+            }
+            document.getElementById('mostFrequentResult').textContent = `Most Frequent Number: ${mostFrequentNum}`;
+        }
+    </script>
+</body>
+</html>

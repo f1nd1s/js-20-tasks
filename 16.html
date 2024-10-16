@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Count Vowels and Consonants</h2>
+    <input type="text" id="stringInput" placeholder="Enter a string">
+    <button onclick="countVowelsAndConsonants()">Count</button>
+    <p id="countResult"></p>
+    
+    <script>
+        function countVowelsAndConsonants() {
+            const str = document.getElementById('stringInput').value.toLowerCase();
+            const vowels = str.match(/[aeiou]/g) || [];
+            const consonants = str.match(/[bcdfghjklmnpqrstvwxyz]/g) || [];
+            document.getElementById('countResult').textContent = `Vowels: ${vowels.length}, Consonants: ${consonants.length}`;
+        }
+    </script>
+</body>
+</html>
